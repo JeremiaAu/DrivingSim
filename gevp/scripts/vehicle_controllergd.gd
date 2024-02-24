@@ -3,7 +3,7 @@ extends Node3D
 @export var vehicle_node : Vehicle
 
 func _physics_process(_delta):
-	vehicle_node.brake_input = Input.get_action_strength("Brakes")
+	vehicle_node.brake_input = getBrakes()
 	vehicle_node.steering_input = Input.get_action_strength("Steer Left") - Input.get_action_strength("Steer Right")
 	vehicle_node.throttle_input = pow(getThrottle(), 2.0)
 	vehicle_node.handbrake_input = Input.get_action_strength("Handbrake")
@@ -20,7 +20,7 @@ func _physics_process(_delta):
 	
 	if vehicle_node.current_gear == -1:
 		vehicle_node.brake_input = getThrottle()
-		vehicle_node.throttle_input = Input.get_action_strength("Brakes")
+		vehicle_node.throttle_input = getBrakes()
 	
 var throttleControllerHasBeenUsed = false
 func getThrottle():
@@ -37,4 +37,20 @@ func getThrottle():
 		return 0
 	else:
 		return (ThrottleAxis * -1 + 1) / 2
+		
+var brakeControllerHasBeenUsed = false
+func getBrakes():
+	var keyboardInput = Input.get_action_strength("Brakes")
+	if keyboardInput == 1:
+		return keyboardInput
+	
+	var BrakeAxis = Input.get_axis("BrakesLowerAxis", "BrakesUpperAxis")
+	
+	if BrakeAxis != 0:
+		brakeControllerHasBeenUsed = true
+	
+	if !brakeControllerHasBeenUsed:
+		return 0
+	else:
+		return (BrakeAxis * -1 + 1) / 2
 	
