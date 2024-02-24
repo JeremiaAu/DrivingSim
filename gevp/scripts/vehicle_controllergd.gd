@@ -2,7 +2,7 @@ extends Node3D
 
 @export var vehicle_node : Vehicle
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	vehicle_node.brake_input = Input.get_action_strength("Brakes")
 	vehicle_node.steering_input = Input.get_action_strength("Steer Left") - Input.get_action_strength("Steer Right")
 	vehicle_node.throttle_input = pow(getThrottle(), 2.0)
@@ -28,21 +28,13 @@ func getThrottle():
 	if keyboardInput == 1:
 		return keyboardInput
 	
-	var controllerInputUpperUnmodified = Input.get_action_strength("ThrottleUpperHalfInverse")
+	var ThrottleAxis = Input.get_axis("ThrottleLowerAxis", "ThrottleUpperAxis")
 	
-	if controllerInputUpperUnmodified != 0:
+	if ThrottleAxis != 0:
 		throttleControllerHasBeenUsed = true
 	
-	var controllerInputUpper = (controllerInputUpperUnmodified * -1) + 1
 	if !throttleControllerHasBeenUsed:
-		controllerInputUpper = 0
-		
-	var controllerInputLower = Input.get_action_strength("ThrottleLowerHalf")
-	var controllerInput = (controllerInputUpper + controllerInputLower) / 2
-	
-	print_debug("ThrottleUpper: " + str(controllerInputUpper))
-	print_debug("ThrottleLower: " + str(controllerInputLower))
-	print_debug("Throttle: " + str(controllerInput))
-	
-	return controllerInput
+		return 0
+	else:
+		return (ThrottleAxis * -1 + 1) / 2
 	
