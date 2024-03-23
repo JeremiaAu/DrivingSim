@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://df8vgsyoap7dt"]
+[gd_scene load_steps=9 format=3 uid="uid://df8vgsyoap7dt"]
 
 [ext_resource type="PackedScene" uid="uid://c3ixqkc6k13yi" path="res://gevp/scenes/vehicle_controller.tscn" id="1_4nyat"]
 [ext_resource type="PackedScene" uid="uid://bx8fhhfwam6q0" path="res://gevp/scenes/monster_truck.tscn" id="2_ifc22"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxnvsoi1pvfeu" path="res://gevp/scenes/track.tscn" id="6_30vr6"]
 [ext_resource type="Script" path="res://gevp/scripts/debug.gd" id="7_prdb5"]
 [ext_resource type="Script" path="res://gevp/scripts/debug_ui.gd" id="8_bbyi4"]
+[ext_resource type="PackedScene" uid="uid://14d1hcd1hacx" path="res://Box.tscn" id="8_d1diq"]
 
 [node name="ArcadeDemo" type="Node3D"]
 
@@ -68,3 +69,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_bbyi4")
 metadata/_edit_use_anchors_ = true
+
+[node name="Box" parent="." instance=ExtResource("8_d1diq")]
+
+[node name="Box2" parent="." instance=ExtResource("8_d1diq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10864, 7.94899, -12.8701)
+
+[node name="Box3" parent="." instance=ExtResource("8_d1diq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.71906, 4.18677, -12.8701)
