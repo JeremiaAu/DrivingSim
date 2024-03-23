@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxnvsoi1pvfeu" path="res://gevp/scenes/track.tscn" id="6_30vr6"]
 [ext_resource type="Script" path="res://gevp/scripts/debug.gd" id="7_prdb5"]
 [ext_resource type="Script" path="res://gevp/scripts/debug_ui.gd" id="8_bbyi4"]
-[ext_resource type="PackedScene" uid="uid://14d1hcd1hacx" path="res://Box.tscn" id="8_d1diq"]
+[ext_resource type="PackedScene" uid="uid://14d1hcd1hacx" path="res://prefab/Box.tscn" id="8_d1diq"]
 
 [node name="ArcadeDemo" type="Node3D"]
 

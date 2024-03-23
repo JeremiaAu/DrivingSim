@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnvm77urto851"]
+
+[ext_resource type="PackedScene" uid="uid://14d1hcd1hacx" path="res://prefab/Box.tscn" id="1_bloy8"]
+
+[sub_resource type="Gradient" id="Gradient_u6ph6"]
+colors = PackedColorArray(0.746094, 0.746094, 0.746094, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jwgtv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_esu3j"]
+seamless = true
+color_ramp = SubResource("Gradient_u6ph6")
+noise = SubResource("FastNoiseLite_jwgtv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pklv7"]
+albedo_color = Color(0, 0.4, 0.00784314, 1)
+albedo_texture = SubResource("NoiseTexture2D_esu3j")
+uv1_scale = Vector3(100, 100, 100)
+
+[node name="hill" type="CSGSphere3D"]
+transform = Transform3D(0.998382, 0, 0, 0, 0.411402, 0, 0, 0, 0.998382, 252.011, -15.2318, 109.708)
+use_collision = true
+radius = 100.0
+radial_segments = 30
+rings = 15
+material = SubResource("StandardMaterial3D_pklv7")
+
+[node name="Box" parent="." instance=ExtResource("1_bloy8")]
+transform = Transform3D(1.00162, 0, 0, 0, 2.43071, 0, 0, 0, 1.00162, 0.367844, 109.469, -0.647888)
+
+[node name="Box2" parent="." instance=ExtResource("1_bloy8")]
+transform = Transform3D(1.00162, 0, 0, 0, 2.43071, 0, 0, 0, 1.00162, 0.367844, 117.357, -0.647888)
+
+[node name="Box3" parent="." instance=ExtResource("1_bloy8")]
+transform = Transform3D(1.00162, 0, 0, 0, 2.43071, 0, 0, 0, 1.00162, 0.367844, 125.839, -0.647888)
+
+[node name="Box4" parent="." instance=ExtResource("1_bloy8")]
+transform = Transform3D(1.00162, 0, 0, 0, 2.43071, 0, 0, 0, 1.00162, 0.367844, 134.924, -0.647888)

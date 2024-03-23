@@ -1,4 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://dxnvsoi1pvfeu"]
+[gd_scene load_steps=17 format=3 uid="uid://dxnvsoi1pvfeu"]
+
+[ext_resource type="PackedScene" uid="uid://bnvm77urto851" path="res://prefab/hill.tscn" id="1_cd6bg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_62kxx"]
 size = Vector3(15, 1, 10)
@@ -106,3 +108,5 @@ environment = SubResource("Environment_hn4xq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.527563, -0.469868, 0.707743, -1.33511e-08, 0.833114, 0.553101, -0.849516, -0.291796, 0.43952, 0, 2.26991, 0)
+
+[node name="hill" parent="." instance=ExtResource("1_cd6bg")]
