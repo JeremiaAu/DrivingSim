@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://gevp/scripts/wheel.gd" id="2_6nusf"]
 
 [sub_resource type="Curve" id="Curve_bt7kc"]
-_data = [Vector2(0, 0.494505), 0.0, 2.04495, 0, 0, Vector2(0.331461, 0.78022), -1.4839, 0.0, 0, 0, Vector2(0.55618, 0.230769), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.494505), 0.0, 2.04495, 0, 0, Vector2(0.331461, 0.78022), -1.4839, 0.0, 0, 0, Vector2(0.769663, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ragy2"]
