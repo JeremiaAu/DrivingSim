@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Driving Sim"
-run/main_scene="res://gevp/scenes/demo_arcade.tscn"
+run/main_scene="res://gevp/scenes/demo_monster_truck.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

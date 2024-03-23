@@ -9,9 +9,9 @@ var debug_sets := ["All", "Inputs", "Tire Forces", "Suspension Forces", "Drivetr
 var current_debug_set := 0
 
 func _process(delta):
-	if Input.is_action_just_pressed("ShowDebug"):
-		show_debug = !show_debug
-		debug_ui.clear_debug()
+	#if Input.is_action_just_pressed("ShowDebug"):
+	show_debug = false
+	debug_ui.clear_debug()
 	
 	if Input.is_action_just_pressed("DebugNext"):
 		switch_debug_set(current_debug_set + 1)

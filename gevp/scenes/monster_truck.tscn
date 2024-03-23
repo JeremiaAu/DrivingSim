@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://gevp/scripts/wheel.gd" id="2_6nusf"]
 
 [sub_resource type="Curve" id="Curve_bt7kc"]
-_data = [Vector2(0, 0.494505), 0.0, 2.04495, 0, 0, Vector2(0.617978, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.692308), -1.4839, 0.0, 0, 0]
+_data = [Vector2(0, 0.494505), 0.0, 2.04495, 0, 0, Vector2(0.331461, 0.78022), -1.4839, 0.0, 0, 0, Vector2(0.55618, 0.230769), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ragy2"]
@@ -419,6 +419,7 @@ shadow_mesh = SubResource("ArrayMesh_jchgt")
 size = Vector3(2.68774, 2.29346, 5.45465)
 
 [node name="VehicleRigidBody" type="RigidBody3D" node_paths=PackedStringArray("front_left_wheel", "front_right_wheel", "rear_left_wheel", "rear_right_wheel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0110121, -4.76837e-07, 0.00712252)
 script = ExtResource("1_kp1h8")
 front_left_wheel = NodePath("WheelFrontLeft")
 front_right_wheel = NodePath("WheelFrontRight")
@@ -463,6 +464,10 @@ rear_wheel_mass = 363.0
 transform = Transform3D(-100, 8.74228e-06, 3.82137e-13, 0, -4.37114e-06, 100, 8.74228e-06, 100, 4.37114e-06, 0, 1.8, -0.1)
 mesh = SubResource("ArrayMesh_8vt5u")
 skeleton = NodePath("")
+
+[node name="Camera3D" type="Camera3D" parent="Monster Truck"]
+transform = Transform3D(-0.01, 1.74846e-09, 8.74228e-10, 8.74228e-10, -2.88102e-10, 0.01, 1.74846e-09, 0.01, 2.88102e-10, 9.752e-05, -0.0102609, 0.0135855)
+fov = 80.7183
 
 [node name="WheelFrontLeft" type="RayCast3D" parent="." node_paths=PackedStringArray("wheel_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72513, 1.214, -1.94468)
